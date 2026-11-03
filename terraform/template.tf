@@ -10,7 +10,7 @@ resource "google_compute_instance_template" "web_v1" {
   }
 
   network_interface {
-    subnetwork = google_compute_subnetwork.web.id
+    subnetwork = google_compute_subnetwork.public.id
     access_config {} # ephemeral external IP so apt-get can reach the internet
   }
 

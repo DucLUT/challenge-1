@@ -1,0 +1,36 @@
+# Terraform local state and provider cache
+.terraform/
+*.tfstate
+*.tfstate.*
+crash.log
+crash.*.log
+tfplan
+*.tfplan
+
+# Variable files (often hold secrets); example files are allowed
+*.tfvars
+*.tfvars.json
+!*.tfvars.example
+
+# Local overrides
+override.tf
+override.tf.json
+*_override.tf
+*_override.tf.json
+
+# CLI config
+.terraformrc
+terraform.rc
+
+# GCP credentials
+*.pem
+*.key
+*-key.json
+*credentials*.json
+service-account*.json
+application_default_credentials.json
+.env
+.env.*
+
+# Claude Code local settings
+.claude/settings.local.json
