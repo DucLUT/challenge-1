@@ -17,7 +17,9 @@ resource "google_compute_instance" "vm" {
   depends_on = [google_project_service.api, google_project_iam_member.vm_compute_viewer]
 
   metadata = {
-    enable-oslogin = "TRUE"
+    enable-oslogin  = "TRUE"
+    startup-script  = file("${path.module}/scripts/setup_nginx.sh")
+    check-labels-py = file("${path.module}/scripts/check_labels.py")
   }
 
   service_account {
