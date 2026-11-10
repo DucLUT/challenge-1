@@ -24,7 +24,7 @@ resource "google_compute_instance" "vm" {
 
   service_account {
     email  = google_service_account.vm.email
-    scopes = ["cloud-platform"] # IAM roles decide what the account can actually do
+    scopes = ["cloud-platform"]
   }
 
   network_interface {
@@ -34,6 +34,8 @@ resource "google_compute_instance" "vm" {
     }
   }
 }
+
+
 
 
 resource "google_compute_firewall" "allow_ssh" {
